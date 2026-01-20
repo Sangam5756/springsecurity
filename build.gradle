@@ -19,15 +19,24 @@ repositories {
 }
 
 dependencies {
+
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'org.springframework.boot:spring-boot-configuration-processor'
-    implementation 'org.flywaydb:flyway-core'
-    implementation 'org.projectlombok:lombok'
-    implementation 'org.flywaydb:flyway-mysql'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
     runtimeOnly 'com.mysql:mysql-connector-j'
+
+    implementation 'org.apache.kafka:kafka-clients'
+    implementation 'org.springframework.kafka:spring-kafka'
+
+    // Source: https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt
+    implementation 'io.jsonwebtoken:jjwt:0.13.0'
+//    security
+    // Source: https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security
+    implementation 'org.springframework.boot:spring-boot-starter-security:3.5.9'
+
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
